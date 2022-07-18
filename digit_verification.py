@@ -1,8 +1,10 @@
 from string_processing import *
 
+cpf = complete_string_verification()
+
 def digit1_verificator():
 
-    treated_cpf = string_processor()
+    treated_cpf = cpf
     cont = 10
     total = 0
     for digit in treated_cpf:
@@ -15,7 +17,7 @@ def digit1_verificator():
 
 def digit2_verificator():
     
-    treated_cpf = string_processor() + digit1_verificator()
+    treated_cpf = cpf + digit1_verificator()
     cont = 11
     total = 0
     for digit in treated_cpf:
@@ -27,9 +29,8 @@ def digit2_verificator():
     return '0' if result > 9 else str(result)
 
 def new_cpf():
-    treated_cpf = string_processor() + digit1_verificator() +digit2_verificator()
+    treated_cpf = cpf + digit1_verificator() + digit2_verificator()
     return treated_cpf
-    
 
 
 

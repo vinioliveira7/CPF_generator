@@ -1,20 +1,15 @@
-cpf = input("Digite um CPF [xxx.xxx.xxx-xx]: ")
+from random import randint
 
-def string_processor():
+def string_generator():
+    cpf = str(randint(100000000, 999999999))
 
-    digit_list = cpf[0:11].replace('.', '')
-    treated_cpf = (digit_list)
+    return cpf
 
-    return treated_cpf
 
-def complete_string_processor():
+def complete_string_verification():
+    cpf = string_generator()
 
-    digit_list = cpf.replace('.', '')
-    digit_list = digit_list.replace('-', '')
-    
-    treated_cpf = digit_list
+    while cpf == cpf[0] * 9:
+        cpf = string_generator()
 
-    if treated_cpf == treated_cpf[0] * 11:
-        return False
-
-    return treated_cpf
+    return cpf
